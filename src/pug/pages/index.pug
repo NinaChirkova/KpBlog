@@ -1,0 +1,18 @@
+extends ../layouts/main.pug
+
+block variables 
+    -var title = "Main page";
+    -
+        menuAsideItems = [
+            {"name": "Брови", "url" : "#"},
+            {"name": "Глаза", "url" : "#"},
+            {"name": "Губы", "url" : "#"},
+            {"name": "Удаление татуажа", "url" : "#"},
+            {"name": "Татуировки", "url" : "#"},
+            {"name": "Пирсинг", "url" : "#"}
+        ];
+
+block content
+    h1 HELLO WORLD!
+    p
+        | Let's do it!

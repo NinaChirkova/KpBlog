@@ -1,0 +1,14 @@
+include ../mixins/_mixins.pug
+
+block variables 
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include _head-part.pug
+        title #{title}
+    body 
+
+        block content 
+
+        include _scripts-part.pug

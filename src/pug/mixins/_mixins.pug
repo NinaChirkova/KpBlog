@@ -1,0 +1,107 @@
+mixin cardService(img, alt, title)
+    .service-card.service-card--width-third
+        .aspect-ratio-box
+            img(src="../img/service-cards/"+ img, alt=""+ alt width="390" height="351" class="service-card__bg")
+            .aspect-ratio-box-inside
+                h3.service-card__title.service-card__title--light
+                    | #{title}
+                button(class="btn btn--light btn--size btn--mt20 btn--size-small" type="button")
+                    | ЗАПИСЬ
+
+mixin cardServiceWide(img, alt, title1, title2)
+    .service-card.service-card--width-half
+        .aspect-ratio-box
+            img(src="../img/service-cards/"+ img, alt=""+ alt width="792" height="475" class="service-card__bg")
+            .aspect-ratio-box-inside
+                h3.service-card__title.service-card__title--light
+                    | #{title1}
+                    br(class="br-d-none-mobile")
+                    | #{title2}
+                button(class="btn btn--light btn--size btn--mt20 btn--size-small" type="button")
+                    | ЗАПИСЬ
+
+mixin cardSertificate(img, alt, title)
+    .sertificate-card
+        .aspect-ratio-box
+            a(href="../img/sertificate/"+ img class="aspect-ratio-box-inside") 
+                img(src="../img/sertificate/"+ img, alt=""+ alt width="527" height="368" class="sertificate-card__bg")
+                h3.sertificate-card__title.sertificate-card__title--light
+                    | #{title}
+
+mixin cardMasters(img1, img2, alt, name, position)
+    .masters-card
+        .aspect-ratio-box
+            picture 
+                source(media="(min-width:576px)" srcset="../img/portraits/"+ img2 class="masters-card__bg")
+                img(src="../img/portraits/"+ img1, alt=""+ alt width="373" height="519" class="masters-card__bg")
+            .aspect-ratio-box-inside                
+                .masters-card__name.masters-card__name--light
+                    | #{name}
+                .masters-card__position.masters-card__position--light
+                    | #{position}
+                .btn__wrapper--changed
+                    button(class="btn btn--light btn--size btn--mt20 btn--size-small" type="button")
+                        | ЗАПИСЬ
+                    button(class="btn btn--dark btn--size btn--d-none" type="button")
+                        | бесплатная консультация
+
+mixin commentCard(text, name, date)
+    .comment-card 
+        .comment-card__rating 
+            .rating-result
+                span.active
+                span.active
+                span.active
+                span.active
+                span
+        .comment-card__text.comment-card__text--dark.comment-card__text--margin
+            | #{text}
+        .comment-card__name.comment-card__name--margin
+            | #{name}
+        .comment-card__date
+            | #{date}
+
+mixin listService(text)
+    li.list__item.list__item--img-left
+        | #{text}
+
+mixin cardSpecialist(img, name, text, price)
+    .specialist-card
+        .specialist-card__photo
+            .aspect-ratio-box 
+                img(src="../img/portraits/"+ img, alt=""+img width='332' height="412" class="aspect-ratio-box-inside" loading="lazy")
+        .specialist-card__description
+            .specialist-card__name.specialist-card__name--dark
+                | #{name}
+            .specialist-card__position.specialist-card__position--dark
+                | #{text}
+            .specialist-card__price.specialist-card__price--margin
+                p Цена:
+                p #{price}
+            .btn__wrapper--full
+                button(class="btn btn--dark btn--mt20 btn--size-form" type="button")
+                    | ЗАПИСЬ
+                button(class="btn btn--light btn--size-form" type="button")
+                    | консультация
+
+mixin serviceCard(img, title, text, price, duration)
+    .card-service.card-service--margin
+        .card-service__photo
+            img(src="../img/service-cards/"+ img, alt=""+ title width="490" height="412" loading="lazy")
+        .card-service__description.card-service__description--pad.card-service__description--bg
+            h3.subtitle
+                | #{title}
+            p.text.text--standart.mt-15
+                | #{text}
+            .procedure-description.mt-30
+                p.procedure-description__price
+                    | Цена:
+                    span #{price}
+                p.procedure-description__duration
+                    | Время процедуры: 
+                    span #{duration}
+            .btn__wrapper.btn__wrapper--insta.btn__wrapper--margin-bigger
+                button(class="btn btn--light btn--size-header btn--mt20" type="button")
+                    | ЗАПИСЬ
+                button(class="btn btn--dark btn--size-header" type="button")
+                    | консультация
