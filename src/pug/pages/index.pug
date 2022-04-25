@@ -3,16 +3,37 @@ extends ../layouts/main.pug
 block variables 
     -var title = "Main page";
     -
-        menuAsideItems = [
-            {"name": "Брови", "url" : "#"},
-            {"name": "Глаза", "url" : "#"},
-            {"name": "Губы", "url" : "#"},
-            {"name": "Удаление татуажа", "url" : "#"},
-            {"name": "Татуировки", "url" : "#"},
-            {"name": "Пирсинг", "url" : "#"}
+        menuItems = [
+            {"name": "Услуги", "url" : "#"},
+            {"name": "Кейсы", "url" : "#"},
+            {"name": "Блог", "url" : "#"}
+        ];
+    -
+        contactsItems = [
+            {"img": "icon-email.png", "url" : "#"},
+            {"img": "icon-telegram.png", "url" : "#"},
+            {"img": "icon-vk.png", "url" : "#"}
         ];
 
 block content
-    h1 HELLO WORLD!
-    p
-        | Let's do it!
+    header.header
+        div.container.d-flex.justify-content-between.align-items-center
+            div.logo.d-flex
+                img(src="../../img/logo.png", alt="Logo")
+                div.logo__text
+                    p.logo__text--name
+                        |Евгений Малышенко
+                    p.logo__text--status
+                        |Копирайтер и маркетолог
+            nav.nav
+                ul.nav-list
+                    for item in menuItems 
+                        li.nav-item
+                            a(href="" + item.url class="nav-item__link")
+                                | #{item.name}
+            div.contacts
+                ul.contacts-list
+                    for item in contactsItems
+                        li.contacts-item
+                            a(href="" + item.url class="contacts-item__link")
+                                img(src="../../img/icons/" + item.img class="contacts-item__img")

@@ -1,0 +1,23 @@
+.nav {
+	-webkit-flex-grow: 2;
+	        flex-grow: 2;
+	
+	&-list {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	&-item {
+		
+		&__link {
+			text-decoration: none;
+			color: inherit;
+			
+			&:hover,
+			&:focus,
+			&:active {
+				text-decoration: none;
+			}
+		}
+	}
+}
