@@ -1,3 +1,16 @@
+mixin cardWorks(img, title, text, date)
+    .col-4.card--margin1
+        div.card.card-wrapper
+            img(src="../../img/works/" +img class="card__img")
+            .card-description
+                a(href="#")
+                    h2.subtitle.card__title
+                        | #{title}
+                p.text.card__text.mt-20
+                    | #{text}
+                span.card__date.mt-20
+                    | #{date}
+
 mixin cardService(img, alt, title)
     .service-card.service-card--width-third
         .aspect-ratio-box
